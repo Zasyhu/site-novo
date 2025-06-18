@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gama Novaes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <img id="imagem-botao" class="imglogo" src="logogamanovaes_branca.png" alt="Logo Gama Novaes" />
+    <div class="search">
+      <input type="text" placeholder="Pesquise seu produto..." />
+    </div>
+    <div class="menu">
+     <p><a href="produtos.html">produtos</a></p>
+      <a href="#">Contatos</a>
+      <a href="carrinho.html">
+  <img src="carranho.png" alt="Ícone do carrinho de compras" style="width: 30px; height: auto;" />
+</a>
+
+      <div id="dark-mode-banner" class="modo-escuro-banner">
+        <img src="botao.png" alt="Alternar modo escuro" />
+      </div>
+    </div>
+  </header>
+
+  <div class="banner-carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
+    <img class="banner-slide active" src="Banner.png" alt="Banner Gama Novaes" />
+    <img class="banner-slide" src="Ofertas Incríveis_ Caixa d'Água 1000L.png" alt="Oferta Caixa d'Água" />
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+  <div class="categorias">
+    <div class="categoria">
+      Cimento
+      <img class="img-categoria" src="cimento-cp-ii-z-32r-todas-as-obras-50-kg.jpg" alt="Cimento" />
+    </div>
+    <div class="categoria">
+      Ferramenta
+      <img class="img-categoria" src="Martelo.webp" alt="Ferramenta" />
+    </div>
+    <div class="categoria">
+      Tinta
+      <img class="img-categoria" src="Tinta Acrílica.jpg" alt="Tinta" />
+    </div>
+  </div>
+
+  <div class="produtos">
+    <h2>Produtos em destaque</h2>
+
+    <div class="produto">
+      <p>Cimento</p>
+      <img class="img-categoria" src="cimento-cp-ii-z-32r-todas-as-obras-50-kg.jpg" alt="Cimento" />
+      <button onclick="comprar('Cimento')">Comprar</button>
+    </div>
+
+    <div class="produto">
+      <p>Tinta Acrílica</p>
+      <img class="img-categoria" src="Tinta Acrílica.jpg" alt="Tinta Acrílica" />
+      <button onclick="comprar('Tinta Acrílica')">Comprar</button>
+    </div>
+
+    <div class="produto">
+      <p>Serra Circular</p>
+      <img class="img-categoria" src="Serra Circular.webp" alt="Serra Circular" />
+      <button onclick="comprar('Serra Circular')">Comprar</button>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
