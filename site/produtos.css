@@ -1,0 +1,166 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #000;
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: 30px;
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.imglogo {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.search input {
+  padding: 10px 600px;         
+  border: 1px solid #ccc;
+  border-radius: 8px;         
+  width: 400%;
+  max-width: 400px;          
+  font-size: 16px;            
+  transition: border-color 0.3s;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu a {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.modo-escuro-banner img {
+  width: 30px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.categoria {
+  margin-bottom: 40px;
+}
+
+.categoria h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.produto {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 150px;
+  padding: 15px;
+  text-align: center;
+  flex: 1 1 calc(33.33% - 30px);
+  transition: background-color 0.3s;
+}
+
+.produto img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.produto p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.produto span {
+  display: block;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.produto button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+body.dark-mode {
+  background-color: #2b0f0f;
+  color: white;
+}
+
+body.dark-mode header,
+body.dark-mode .produto {
+  background-color: #330d0d;
+}
+
+body.dark-mode .categoria {
+  background-color: #6b1b1b;
+}
+
+body.dark-mode .produtos {
+  background-color: #1b1b1b;
+}
+
+body.dark-mode .search input {
+  background-color: #1b1b1b;
+  color: white;
+  border: 1px solid #555;
+}
+
+body.dark-mode .menu a {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .produto {
+    flex: 1 1 100%;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    margin-top: 100px;
+  }
+
+  .imglogo {
+    margin-bottom: 10px;
+  }
+}
