@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Produto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+  
+    h1 {
+      margin-bottom: 30px;
+      color: #7a0000;
+    }
+  
+    .produto-container {
+      background-color: white;
+      padding: 30px;
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  
+    .preco {
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+    }
+  
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background-color: #7a0000;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+  
+    a:hover {
+      background-color: #a00000;
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="produto-container">
+  <h1 id="nome-produto">Carregando...</h1>
+  <img id="imagem-produto" src="" alt="Imagem do produto" width="200">
+  <p id="descricao-produto"></p>
+  <p id="preco-produto"></p>
+  <a href="site.html">Voltar para a loja</a>
+</div>
+
+  <script>
+    const produtos = {
+      1: {
+        nome: "Tênis Furadeira",
+        descricao: " furadeira é uma ferramenta elétrica, projetada para perfurar.",
+        preco: "R$ 200,00",
+        imagem: "https://via.placeholder.com/200?text=Tenis"
+      },
+      2: {
+        nome: "Tinta Esmalte",
+        descricao: "uma tinta com acabamento liso e brilhante.",
+        preco: "R$ 32,00",
+        imagem: "https://via.placeholder.com/200?text=Camisa"
+      },
+      3: {
+        nome: "Porto de cimento",
+        descricao: "O cimento Portland é um material hidráulico.",
+        preco: "R$ 28,00",
+        imagem: "https://via.placeholder.com/200?text=Mochila"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const produto = produtos[id];
+
+    if (produto) {
+      document.getElementById("nome-produto").textContent = produto.nome;
+      document.getElementById("descricao-produto").textContent = produto.descricao;
+      document.getElementById("preco-produto").textContent = produto.preco;
+      document.getElementById("imagem-produto").src = produto.imagem;
+      document.getElementById("imagem-produto").alt = produto.nome;
+    } else {
+      document.getElementById("nome-produto").textContent = "Produto não encontrado.";
+      document.getElementById("descricao-produto").textContent = "";
+      document.getElementById("preco-produto").textContent = "";
+      document.getElementById("imagem-produto").style.display = "none";
+    }
+  </script>
+</body>
+</html>
